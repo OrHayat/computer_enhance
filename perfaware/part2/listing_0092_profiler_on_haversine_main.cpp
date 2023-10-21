@@ -11,7 +11,7 @@
    ======================================================================== */
 
 /* ========================================================================
-   LISTING 80
+   LISTING 92
    ======================================================================== */
 
 /* NOTE(casey): _CRT_SECURE_NO_WARNINGS is here because otherwise we cannot
@@ -46,10 +46,11 @@ struct haversine_pair
     f64 X1, Y1;
 };
 
-#include "listing_0076_simple_profiler.cpp"
+#define PROFILER 1
+#include "listing_0091_switchable_profiler.cpp"
 #include "listing_0065_haversine_formula.cpp"
 #include "listing_0068_buffer.cpp"
-#include "listing_0079_timedblock_lookup_json_parser.cpp"
+#include "listing_0089_allfuncs_lookup_json_parser.cpp"
 
 static buffer ReadEntireFile(char *FileName)
 {
@@ -181,4 +182,4 @@ int main(int ArgCount, char **Args)
     return Result;
 }
 
-static_assert(__COUNTER__ < ArrayCount(profiler::Anchors), "Number of profile points exceeds size of profiler::Anchors array");
+ProfilerEndOfCompilationUnit;
